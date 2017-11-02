@@ -2,6 +2,7 @@ package com.minhtetoo.implicitintentexample;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.CalendarContract;
 import android.provider.ContactsContract;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnShareText,btnShareImg,btnTakePic,btnAddContact,
            btnSendEmail,btnChooseFile,btnOpenMap,btnSendSms,
-            btnCallPhone;
+            btnCallPhone,btnAddEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOpenMap =findViewById(R.id.btn_open_map);
         btnSendSms =findViewById(R.id.btn_send_sms);
         btnCallPhone =findViewById(R.id.btn_call_ph);
+        btnAddEvent =findViewById(R.id.btn_add_event);
 
         btnShareText.setOnClickListener(this);
         btnShareImg.setOnClickListener(this);
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOpenMap.setOnClickListener(this);
         btnSendSms.setOnClickListener(this);
         btnCallPhone.setOnClickListener(this);
+        btnAddEvent.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +97,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dialPhoneNumber("09968058040");
                 break;
 
+            case R.id.btn_add_event :
+                addEvent("PADC showcase ","PHANDEEYAR",1000000000,1005000000);
+                break;
+
 
 
         }
@@ -143,6 +150,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void dialPhoneNumber(String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + phoneNumber));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+    public void addEvent(String title, String location, long begin, long end) {
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.Events.TITLE, title)
+                .putExtra(CalendarContract.Events.EVENT_LOCATION, location)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }

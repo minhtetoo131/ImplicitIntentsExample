@@ -12,63 +12,60 @@
         android:id="@+id/btn_share_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
         android:text="Sharetext" />
 
     <Button
         android:id="@+id/btn_share_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Share Image" />
 
     <Button
         android:id="@+id/btn_take_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="take Picture" />
 
     <Button
         android:id="@+id/btn_add_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Add Contact" />
 
     <Button
         android:id="@+id/btn_send_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Send Email" />
 
     <Button
         android:id="@+id/btn_choose_file"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Choose File" />
 
     <Button
         android:id="@+id/btn_open_map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Open Map" />
 
     <Button
         android:id="@+id/btn_send_sms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Send SMS" />
 
     <Button
         android:id="@+id/btn_call_ph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Call Phone" />
+
+    <Button
+        android:id="@+id/btn_add_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Calendar Event" />
 </LinearLayout>
